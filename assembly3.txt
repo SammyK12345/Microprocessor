@@ -1,0 +1,157 @@
+Li #32
+Move r15
+Load [r15]
+Move r11
+Li #0
+Move r15
+Move r12
+Move r13
+Move r14
+Main_Loop:
+Li #0
+Move r10
+Li b1111100
+Move r8
+Li #1
+Lshift r8
+Move r8
+Load [r15]
+Move r1
+Inc r15
+Load [r15]
+Move r2
+Li #0
+Move r7
+Inner_Loop1:
+Li #0
+Add r8
+And r1
+Move r3
+Li #0
+Add r7
+Lshift r3
+XOR r11
+Move r3
+Li #0
+Bne No_Match, r3
+Li #1
+Move r10
+Inc r12
+Inc r14
+No_Match:
+Li #1
+Rshift r8
+Move r8
+Inc r7
+Li #4
+Bne Inner_Loop1, r7
+Li #0
+Move r7
+Li #4
+Move r5
+Li b1000000
+Move r9
+Li #1
+Lshift r9
+Move r9
+Inner_Loop2:  
+Li #0
+Add r8
+And r1
+Move r3
+Li #4
+Add r7
+Lshift r3
+Move r3
+Li #0
+Add r9
+And r2
+Move r4
+Li #0
+Add r5
+Rshift r4
+Add r3
+Move r3
+XOR r11
+Move r3
+Li #0
+Bne No_Match2, r3
+Inc r14
+No_Match2:
+Li b1111111
+Move r4
+Li #1
+Lshift r4
+Move r4
+Li #1
+Add r4
+Add r5
+Move r5
+Li #1
+Rshift r8
+Li b1000000
+Move r6
+Li #0 
+Add r7
+Rshift r6
+Add r9
+Move r9
+Inc r7
+Li #4
+Bne Inner_Loop2, r7
+Li #1
+Bne Found, r10
+Inc r13
+Li #0
+Move r10
+Found:
+Li #31
+Bne Main_Loop, r15
+Li #0
+Move r7
+Li b1111100
+Move r8
+Li #1
+Lshift r8
+Move r8
+Inner_Loop3:
+Li #0
+Add r8
+And r2
+Move r3
+Li #0
+Add r7
+Lshift r3
+XOR r11
+Move r3
+Li #0
+Bne No_Match3, r3
+Li #1
+Move r10
+Inc r12
+Inc r14
+No_Match3:
+Li #1
+Rshift r8
+Move r8
+Inc r7
+Li #4
+Bne Inner_Loop3, r7
+Li #0
+Add r10
+Add r13
+Move r13
+Li #33
+Move r15
+Li #0
+Add r12
+Store [r15]
+Inc r15
+Li #0
+Add r13
+Store [r15]
+Inc r15
+Li #0
+Add r14
+Store [r15]
+DONE
